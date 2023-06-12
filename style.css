@@ -7,11 +7,13 @@
     --primary-color: #ecedee;
     --secondary-color: #212121;
     --body-color: #fff;
+    --blob-color: #2d2e32;
 }
 .dark-theme {
     --primary-color: #212121;
     --secondary-color: #fff;
     --body-color: #212121;
+    --blob-color: rgb(236, 233, 233);
 }
 .fa-github, .fa-twitter {
     pointer-events: none;
@@ -157,7 +159,7 @@ header {
     margin-left: -10px;
 }
 .side-list:hover > a, .side-list:focus > a {
-    color: var(--primary-color);
+    color: white;
 }
 main {
     margin-top: 5rem;
@@ -166,15 +168,30 @@ main {
     width: 250px;
     height: 250px;
     margin: 0 auto;
+    background-color: #ece6e6;
     background-image: url(./images/dancho.jpg);
-    background-position: 50%;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 3px solid #2d2e32;
-    border-radius: 2.5rem;
+    background-blend-mode: multiply;
+    border: 5px solid var(--blob-color);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: blobber 8s ease-in-out infinite; 
+    /*border-radius: 2.5rem;
     border-top-right-radius: 3.5rem;
     border-top-left-radius: 5rem;
-    border-bottom-right-radius: 7rem;
+    border-bottom-right-radius: 7rem;*/
+}
+@keyframes blobber {
+    0%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
 .intro-text {
     padding: .7rem;
@@ -189,11 +206,11 @@ main {
     line-height: 1.4;
 }
 .welcome {
-    margin: .5rem 0 2rem 0;
+    margin: .5rem 0 1rem 0;
     text-align: center;
 }
 .welcome > img {
-    width: 7rem;
+    width: clamp(6.5rem, 7rem, 10rem);
 }
 .lang-head {
     width: 30%;
