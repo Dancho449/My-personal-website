@@ -23,6 +23,15 @@ window.addEventListener('click', function(e){
     }
 })
 
+/*icon.addEventListener('click', function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        icon.src = "./images/sun.PNG"
+    }else{
+        icon.src = "./images/moon.PNG"
+    }
+})*/
+
 icon2.addEventListener('click', function() {
     document.body.classList.toggle("dark-theme");
     if(document.body.classList.contains("dark-theme")){
@@ -30,6 +39,6 @@ icon2.addEventListener('click', function() {
         ham.src = "./images/menubar-light.png"
     }else{
         icon2.src = "./images/moon.PNG"
-        ham.src = "./images/menubar-light.png"
+        ham.src = "./images/menubar-dark.png"
     }
 })

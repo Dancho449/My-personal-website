@@ -3,6 +3,9 @@
 *::after {
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --primary-color: #ecedee;
     --secondary-color: #212121;
@@ -198,7 +201,7 @@ main {
     text-align: center;
 }
 .intro-text > h2 {
-    font-size: clamp(1.5rem, 4.5vw, 5rem);
+    font-size: clamp(1.5rem, 3.5vw, 4rem);
     color: var(--secondary-color);
 }
 .intro-text > p {
@@ -215,10 +218,15 @@ main {
 .lang-head {
     width: 30%;
     margin: 1rem auto;
+    font-size: 1rem;
+    font-weight: bold;
     padding-bottom: .6rem;
     text-align: center;
-    border-bottom: 2px solid #2d2e32;
+    border-bottom: 2px solid var(--secondary-color);
     color: var(--secondary-color);
+}
+.lang-head > .fa-arrow-right {
+    display: none;
 }
 .icon-container {
     display: flex;
@@ -242,7 +250,7 @@ main {
 .icon-holder > img {
     width: 24px;
 }
-.about {
+#about {
     width: 90%;
     text-align: center;
     margin: 2rem auto;
@@ -255,21 +263,21 @@ main {
     background-size: cover;
     color: white;
 }
-.about > h4 {
+#about > h4 {
     font-size: 1.2rem;
 }
-.about > p {
+#about > p {
     text-align: left;
     line-height: 1.4;
     font-weight: bold;
 }
-.portfolio {
+#portfolio {
     background-color: #ece6e6;
     padding: .5rem;
 }
-.portfolio > h2 {
+#portfolio > h2 {
     text-align: center;
-    font-size: clamp(1.5rem, 3.5vw, 4rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
 }
 .port {
     width: 90%;
@@ -287,12 +295,12 @@ main {
     border-radius: .5rem;
     box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.45);
 }
-.port > h4 {
+.portfolio-text > h4 {
     margin-top: -1px;
     font-size: clamp(1.2rem, 3.5vw, 4rem);
     color: var(--secondary-color);
 }
-.port > p {
+.portfolio-text> p {
     color: var(--secondary-color);
 }
 .port-container {
@@ -329,7 +337,7 @@ main {
     font-size: clamp(1rem, 1.05rem, 1.3rem);
     color: var(--secondary-color);
 }
-.contact {
+#contact {
     padding: 1rem;
     text-align: center;
 }
@@ -359,4 +367,143 @@ footer {
 .copy {
     color: #fff;
     margin-top: 2px;
+}
+@media (min-width: 800px) {
+    .heading {
+        margin-bottom: 0;
+    }
+    .heading > h2 {
+        font-size: 1.4rem;
+    }
+    main {
+        margin-top: 5.5rem;
+    }
+    .hamburger {
+        display: none;
+    }
+    /*header > .light-dark {
+        display: block;
+        width: 20px;
+        cursor: pointer;
+    }*/
+    .navbar-list {
+        display: block;
+        flex: 1;
+        text-align: right;
+    }
+    .nav-list {
+        cursor: pointer;
+        font-size: .875rem;
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+        font-weight: bold;
+        display: inline-block;
+        margin: 10px 1rem;
+    }
+    .nav-list > a {
+        color: var(--secondary-color);
+    }
+    .nav-list:hover, .nav-list:focus {
+        transform: scale(1.2);
+    }
+    .nav-list:hover > a, .nav-list:focus > a {
+        color: #4b4491;
+    }
+    .intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4rem;
+        background-image: url(./images/blob2.svg), url(./images/blob2.svg);
+        background-position: 80% 0, left 50%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 30%, 30%;
+    }
+    .intro-text {
+        width: 60%;
+    }
+    .welcome {
+        margin-bottom: 0;
+        margin-top: -20px;
+    }
+    .p-languages {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-bottom: 5rem;
+    }
+    .lang-head {
+        border-bottom: none;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+    .lang-head > .fa-arrow-right {
+        display: inline;
+    }
+    .icon-container {
+        margin: -10px 0 0 -1rem;
+    }
+    .icon-holder {
+        width: 55px;
+        height: 55px;
+    }
+    .icon-holder > img {
+        width: 30px;
+    }
+    #about > h3 {
+        font-size: 1.5rem;
+    }
+    .port {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .portfolio-text {
+        width: 100%;
+        padding-block: .5rem;
+    }
+    .portfolio-text > h4 {
+        margin-bottom: 0;
+        font-size: clamp(1.2rem, 3vw, 2.7rem);
+    }
+    .portfolio-text > p {
+        font-size: clamp(.8rem, 1rem, 1.3rem);
+    }
+    .port-container {
+        gap: 1rem;
+    }
+    .portfolio-lang {
+        padding: 7px;
+        font-size: clamp(.8rem, 1rem, 1.2rem);
+    }
+    .vanil {
+        width: 6.5rem;
+    }
+    .church-code {
+        margin-top: 3rem;
+    }
+    #contact {
+        background-image: url(./images/blob.svg), url(./images/blob2.svg);
+        background-position: 65% 0, -30% -65%;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 35%, 45%;
+    }
+    #contact > h4 {
+        font-size: 1.15rem;
+    }
+    #contact > h3 {
+        font-size: 1.3rem;
+    }
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sprites > .fa-twitter, .sprites > .fa-github {
+        font-size: 1.3rem;
+    }
 }
