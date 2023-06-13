@@ -415,7 +415,7 @@ footer {
         align-items: center;
         margin-bottom: 4rem;
         background-image: url(./images/blob2.svg), url(./images/blob2.svg);
-        background-position: 80% 0, left 50%;
+        background-position: 80% 0, -3% 50%;
         background-repeat: no-repeat, no-repeat;
         background-size: 30%, 30%;
     }
