@@ -5,6 +5,19 @@ const body = document.querySelector('.body');
 const container = document.querySelector('.side-menu');
 const icon2 = document.querySelector('.light-dark2');
 const ham = document.querySelector('.ham');
+const time = document.querySelector('.time-change');
+
+
+let date = new Date()
+let hours = date.getHours()
+if(hours < 12) {
+    time.innerHTML = "morning"
+}else if(hours >= 12 && hours < 17) {
+    time.innerHTML = "afternoon"
+}else {
+    time.innerHTML = "evening"
+}
+
 
 btn.addEventListener('click', function(){
     menu.style.width = "clamp(180px, 27%, 360px)"
