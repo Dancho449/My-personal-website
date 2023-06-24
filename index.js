@@ -20,19 +20,19 @@ if(hours < 12) {
 
 
 btn.addEventListener('click', function(){
-    menu.style.width = "clamp(180px, 27%, 360px)"
-    container.style.width = "100%"
+    menu.style.left = "0"
+    container.style.left = "0"
 })
 
 clear.addEventListener('click', function(){
-    menu.style.width = "0"
-    container.style.width = "0"
+    menu.style.left = "-190px"
+    container.style.left = "-100%"
 })
 
 window.addEventListener('click', function(e){
     if(e.target === container){
-        menu.style.width = "0"
-        container.style.width = "0"
+        menu.style.left = "-190px"
+        container.style.left = "-100%"
     }
 })
 
